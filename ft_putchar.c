@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:23:48 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/17 19:24:28 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/17 19:22:12 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/17 19:26:04 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...);
+int	ft_putchar(int c);
 
-int	ft_printf(const char *str, ...)
+int	ft_putchar(int c)
 {
-	return (0);
+	return (write(1, &c, 1));
 }

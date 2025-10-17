@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:23:48 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/17 19:24:28 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/17 19:52:40 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...);
+int	ft_putstr(char *s);
 
-int	ft_printf(const char *str, ...)
+int	ft_putstr(char *s)
 {
-	return (0);
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
 }
+
+// int main()
+// {
+// 	ft_putstr("hello");
+// }
