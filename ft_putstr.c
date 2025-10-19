@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:55 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/19 19:03:58 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ int	ft_putstr(char *s)
 	int	i;
 
 	if (s == NULL)
-	{
-		ft_putstr("(null)");
-		return (ft_strlen("(null)"));
-	}
+		return (ft_putstr("(null)"));
 	i = 0;
 	while (s[i])
 	{
