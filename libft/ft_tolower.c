@@ -1,49 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:55 by fsitter          ###   ########.fr       */
+/*   Created: 2025/09/30 16:20:13 by fsitter           #+#    #+#             */
+/*   Updated: 2025/09/30 16:21:18 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *s);
+int	ft_tolower(int c);
 
-int	ft_putstr(char *s)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	if (s == NULL)
-	{
-		ft_putstr("(null)");
-		return (ft_strlen("(null)"));
-	}
-	i = 0;
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
 }
 
 // int	main(void)
 // {
-// 	char	*s;
-// 	int		j;
-// 	int		k;
-
-// 	s = NULL;
-// 	j = ft_putstr(s);
-// 	printf("\n");
-// 	printf("%i\n", j);
-// 	k = printf("%s", s);
-// 	printf("\n");
-// 	printf("%i\n", k);
-// 	printf("\n");
+// 	printf("%c\n", ft_tolower(66));
 // }

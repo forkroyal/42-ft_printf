@@ -1,49 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:55 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/19 18:08:50 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/19 18:27:22 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s);
+int	ft_putnbr(int nb);
 
-int	ft_putstr(char *s)
+int	ft_putnbr(int nb)
 {
-	int	i;
+	int			len;
+	int			is_valid;
+	long long	n;
 
-	if (s == NULL)
+	len = 0;
+	n = nb;
+	if (n < 0)
 	{
-		ft_putstr("(null)");
-		return (ft_strlen("(null)"));
+		len++;
+		ft_putchar('-');
+		n *= -1;
 	}
-	i = 0;
-	while (s[i])
+	while (n > 9)
 	{
-		write(1, &s[i], 1);
-		i++;
+		len += ft_putnbr(n / 10);
+		n %= 10;
 	}
-	return (i);
+	is_valid = ft_putchar(n + 48);
+	if (is_valid == -1)
+		return (is_valid);
+	return (len + is_valid);
 }
 
 // int	main(void)
 // {
-// 	char	*s;
-// 	int		j;
-// 	int		k;
+// 	int	a;
+// 	int	i;
+// 	int	j;
 
-// 	s = NULL;
-// 	j = ft_putstr(s);
+// 	a = -42000000;
+// 	i = ft_putnbr(a);
+// 	printf("\n");
+// 	printf("%i\n", i);
+// 	j = printf("%i", a);
 // 	printf("\n");
 // 	printf("%i\n", j);
-// 	k = printf("%s", s);
-// 	printf("\n");
-// 	printf("%i\n", k);
-// 	printf("\n");
 // }

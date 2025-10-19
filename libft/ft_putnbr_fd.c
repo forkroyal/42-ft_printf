@@ -1,49 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:55 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/06 16:43:44 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/10 11:09:14 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *s);
+void	ft_putnbr_fd(int n, int fd);
 
-int	ft_putstr(char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
+	long long	number;
 
-	if (s == NULL)
+	number = n;
+	if (number < 0)
 	{
-		ft_putstr("(null)");
-		return (ft_strlen("(null)"));
+		write(fd, "-", 1);
+		number *= -1;
 	}
-	i = 0;
-	while (s[i])
+	while (number > 9)
 	{
-		write(1, &s[i], 1);
-		i++;
+		ft_putnbr_fd(number / 10, fd);
+		number %= 10;
 	}
-	return (i);
+	number = number + 48;
+	write(fd, &number, 1);
 }
 
 // int	main(void)
 // {
-// 	char	*s;
-// 	int		j;
-// 	int		k;
-
-// 	s = NULL;
-// 	j = ft_putstr(s);
-// 	printf("\n");
-// 	printf("%i\n", j);
-// 	k = printf("%s", s);
-// 	printf("\n");
-// 	printf("%i\n", k);
-// 	printf("\n");
+// 	ft_putnbr_fd(42, 1);
 // }

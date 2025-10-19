@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:55 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/01 13:29:02 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/12 12:26:48 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *s);
+char	*ft_strchr(const char *s, int c);
 
-int	ft_putstr(char *s)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	if (s == NULL)
+	while (*s)
 	{
-		ft_putstr("(null)");
-		return (ft_strlen("(null)"));
+		if (*(unsigned char *)s == (unsigned char)c)
+		{
+			return ((char *)s);
+		}
+		s++;
 	}
-	i = 0;
-	while (s[i])
+	if (*(unsigned char *)s == (unsigned char)c)
 	{
-		write(1, &s[i], 1);
-		i++;
+		return ((char *)s);
 	}
-	return (i);
+	return (NULL);
 }
 
 // int	main(void)
 // {
-// 	char	*s;
-// 	int		j;
-// 	int		k;
-
-// 	s = NULL;
-// 	j = ft_putstr(s);
-// 	printf("\n");
-// 	printf("%i\n", j);
-// 	k = printf("%s", s);
-// 	printf("\n");
-// 	printf("%i\n", k);
-// 	printf("\n");
+// 	printf("%s\n", ft_strchr("", '\0'));
 // }
+
+// to make the function safe add:
+// if (!s) [19]
+// 	return (NULL);

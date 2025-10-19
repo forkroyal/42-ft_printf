@@ -1,49 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:55 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/06 12:02:10 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/06 12:20:46 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *s);
+char	*ft_strdup(const char *s);
 
-int	ft_putstr(char *s)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		len;
+	int		i;
+	char	*duplicate;
 
-	if (s == NULL)
-	{
-		ft_putstr("(null)");
-		return (ft_strlen("(null)"));
-	}
+	len = ft_strlen(s);
+	duplicate = malloc(sizeof(char) * (len + 1));
+	if (!duplicate)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		write(1, &s[i], 1);
+		duplicate[i] = s[i];
 		i++;
 	}
-	return (i);
+	duplicate[i] = '\0';
+	return (duplicate);
 }
 
 // int	main(void)
 // {
-// 	char	*s;
-// 	int		j;
-// 	int		k;
-
-// 	s = NULL;
-// 	j = ft_putstr(s);
-// 	printf("\n");
-// 	printf("%i\n", j);
-// 	k = printf("%s", s);
-// 	printf("\n");
-// 	printf("%i\n", k);
-// 	printf("\n");
+// 	char s[] = "Hello";
+// 	char *s2 = ft_strdup(s);
+// 	printf("%s\n", s);
+// 	printf("%p\n", s);
+// 	printf("%s\n", s2);
+// 	printf("%p\n", s2);
 // }

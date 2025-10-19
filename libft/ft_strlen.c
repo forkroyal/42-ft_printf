@@ -1,49 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:55 by fsitter          ###   ########.fr       */
+/*   Created: 2025/09/29 13:14:17 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/10 11:50:06 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *s);
+size_t	ft_strlen(const char *s);
 
-int	ft_putstr(char *s)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
-	if (s == NULL)
-	{
-		ft_putstr("(null)");
-		return (ft_strlen("(null)"));
-	}
 	i = 0;
-	while (s[i])
-	{
-		write(1, &s[i], 1);
+	while (s[i] != '\0')
 		i++;
-	}
 	return (i);
 }
 
 // int	main(void)
 // {
-// 	char	*s;
-// 	int		j;
-// 	int		k;
-
-// 	s = NULL;
-// 	j = ft_putstr(s);
-// 	printf("\n");
-// 	printf("%i\n", j);
-// 	k = printf("%s", s);
-// 	printf("\n");
-// 	printf("%i\n", k);
-// 	printf("\n");
+// 	printf("%li\n", strlen(NULL));
+// 	printf("safe\n");
+// 	printf("%li\n", ft_strlen(NULL));
 // }

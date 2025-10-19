@@ -1,49 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:26:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:55 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/06 14:46:24 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/10 17:16:03 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *s);
+void	ft_putchar_fd(char c, int fd);
 
-int	ft_putstr(char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	if (s == NULL)
-	{
-		ft_putstr("(null)");
-		return (ft_strlen("(null)"));
-	}
-	i = 0;
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+	write(fd, &c, 1);
 }
 
 // int	main(void)
 // {
-// 	char	*s;
-// 	int		j;
-// 	int		k;
-
-// 	s = NULL;
-// 	j = ft_putstr(s);
+// 	char a = 'a';
+// 	int ft = 1;
 // 	printf("\n");
-// 	printf("%i\n", j);
-// 	k = printf("%s", s);
+// 	ft_putchar_fd(a, ft);
 // 	printf("\n");
-// 	printf("%i\n", k);
+// 	putchar(a);
 // 	printf("\n");
 // }
