@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 18:08:50 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:27:22 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/21 14:30:14 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,9 @@ int	ft_putnbr(int nb)
 		ft_putchar('-');
 		n *= -1;
 	}
-	while (n > 9)
-	{
+	if (n > 9)
 		len += ft_putnbr(n / 10);
-		n %= 10;
-	}
-	is_valid = ft_putchar(n + 48);
+	is_valid = ft_putchar(n % 10 + 48);
 	if (is_valid == -1)
 		return (is_valid);
 	return (len + is_valid);
