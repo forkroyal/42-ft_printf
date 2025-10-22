@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:23:48 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/17 19:24:28 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/22 11:14:49 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	ft_printf(const char *str, ...);
 
 int	ft_printf(const char *str, ...)
 {
-	return (0);
+	return (-1);
 }
