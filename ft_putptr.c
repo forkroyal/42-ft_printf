@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:21:50 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/21 14:53:32 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/22 15:39:02 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	ft_putptr(unsigned long nb);
 
 int	ft_putptr(unsigned long nb)
 {
-	int len;
-	int is_valid;
-	char *base;
+	int		len;
+	int		is_valid;
+	char	*base;
 
 	base = "0123456789abcdef";
 	len = 0;
