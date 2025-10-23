@@ -6,7 +6,7 @@
 #    By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 08:48:43 by fsitter           #+#    #+#              #
-#    Updated: 2025/10/23 09:35:46 by fsitter          ###   ########.fr        #
+#    Updated: 2025/10/23 11:09:58 by fsitter          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ HEADER = ft_printf.h
 
 LIBDIR = ./libft
 
-LIB = {LIBDIR}/libft.a
+LIB = ${LIBDIR}/libft.a
 
-LIBHEADER = {LIBDIR}/libft.h
+LIBHEADER = ${LIBDIR}/libft.h
 
 CFLAGS += -Wall -Werror -Wextra
 
@@ -41,9 +41,9 @@ CREATION = ar rcs
 .c.o:
 	${CC} ${CFLAGS} -I . -c $< -o ${<:.c=.o}
 
-${NAME}: ${OBJECTS} ${HEADER} ${LIB} #${LIBHEADER}
+${NAME}: ${OBJECTS} ${HEADER} ${LIB} ${LIBHEADER}
 	${CREATION} ${NAME} ${OBJECTS}
-#	cp {LIB} .
+	cp ${LIB} .
 
 ${LIB}:
 	make -C ${LIBDIR} all
@@ -54,9 +54,9 @@ clean:
 
 fclean:
 	make -C ${LIBDIR} fclean
-	${RM} ${OBJECTS} ${NAME}
+	${RM} ${OBJECTS} ${NAME} libft.a
 	
-re: flean all
+re: fclean all
 
 all: ${NAME}
 
