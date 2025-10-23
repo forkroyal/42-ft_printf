@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:22:42 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/21 14:54:10 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/23 09:33:23 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <unistd.h>
 
-// int	ft_printf(const char *str, ...);
+int	ft_printf(const char *str, ...);
 int	ft_putchar(int c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int nb);
