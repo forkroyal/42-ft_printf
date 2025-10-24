@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:23:48 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/22 15:38:46 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/24 10:35:31 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	whatingdoing(va_list args, const char format)
 	else if (format == 'u')
 		return (ft_putuint(va_arg(args, unsigned int)));
 	else if (format == 'x' || format == 'X')
-		return (ft_puthex(va_arg(args, unsigned long), format));
+		return (ft_puthex(va_arg(args, unsigned int), format));
 	else if (format == '%')
 		return (ft_putchar(format));
 	else
@@ -56,12 +56,12 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%' && str[i + 1] && ft_strchr("cspiuxX%", str[i + 1]))
+		if (str[i] == '%' && str[i + 1] && ft_strchr("dcspiuxX%", str[i + 1]))
 		{
 			len += whatingdoing(args, str[i + 1]);
 			i++;
 		}
-		else if (str[i] == '%' && !(ft_strchr("cspiuxX%", str[i + 1])))
+		else if (str[i] == '%' && !(ft_strchr("dcspiuxX%", str[i + 1])))
 			return (-1);
 		else
 			len += ft_putchar(str[i]);

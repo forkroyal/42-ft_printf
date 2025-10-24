@@ -6,15 +6,15 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:22:45 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/19 18:26:50 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/24 10:34:55 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned long n, const char format);
+int	ft_puthex(unsigned int n, const char format);
 
-int	ft_puthex(unsigned long n, const char format)
+int	ft_puthex(unsigned int n, const char format)
 {
 	int		len;
 	int		is_valid;
