@@ -6,7 +6,7 @@
 #    By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 08:48:43 by fsitter           #+#    #+#              #
-#    Updated: 2025/10/24 10:36:48 by fsitter          ###   ########.fr        #
+#    Updated: 2025/10/24 10:42:22 by fsitter          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,12 +38,14 @@ RM = rm -f
 
 CREATION = ar rcs
 
-.c.o:
+%.o: %.c
 	${CC} ${CFLAGS} -I . -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJECTS} ${HEADER} ${LIB} ${LIBHEADER}
 	${CREATION} ${NAME} ${OBJECTS}
-	cp ${LIB} .
+	ar x ${LIB}
+	${CREATION} ${NAME} *.o
+	${RM} *.o
 
 ${LIB}:
 	make -C ${LIBDIR} all
@@ -54,7 +56,7 @@ clean:
 
 fclean:
 	make -C ${LIBDIR} fclean
-	${RM} ${OBJECTS} ${NAME} libft.a
+	${RM} ${OBJECTS} ${NAME}
 	
 re: fclean all
 
