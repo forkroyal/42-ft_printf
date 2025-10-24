@@ -6,7 +6,7 @@
 #    By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 08:48:43 by fsitter           #+#    #+#              #
-#    Updated: 2025/10/24 11:50:25 by fsitter          ###   ########.fr        #
+#    Updated: 2025/10/24 12:47:11 by fsitter          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,17 +82,11 @@ all: ${NAME}
 
 ${NAME}: ${OBJECTS} ${HEADER} ${LIBHEADER}
 	${CREATION} ${NAME} ${OBJECTS}
-#	cp ${LIB} ${NAME} 
-
-# ${LIB}:
-# 	(cd libft && make all)
 
 clean:
-#	make -C ${LIBDIR} clean
 	${RM} ${OBJECTS}
 
 fclean:
-# make -C ${LIBDIR} fclean
 	${RM} ${OBJECTS} ${NAME}
 	
 re: fclean all

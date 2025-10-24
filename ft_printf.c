@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:23:48 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/24 10:35:31 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/24 12:40:37 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	whatingdoing(va_list args, const char format)
 		ptr = va_arg(args, void *);
 		if (!ptr)
 			return (ft_putstr("(nil)"));
-		return (ft_putptr((unsigned long)ptr));
+		return (ft_putstr("0x") + ft_putptr((unsigned long)ptr));
 	}
 	else if (format == 'i' || format == 'd')
 		return (ft_putnbr(va_arg(args, int)));
@@ -71,22 +71,26 @@ int	ft_printf(const char *str, ...)
 	return (len);
 }
 
+// #include <limits.h>
 // int	main(void)
 // {
-// 	char a = 'a';
-// 	int i = printf("%c\n", a);
-// 	printf("%i\n", i);
-// 	int j = ft_printf("%c\n", a);
-// 	printf("%i\n", j);
+// 	// char a = 'a';
+// 	// int i = printf("%c\n", a);
+// 	// printf("%i\n", i);
+// 	// int j = ft_printf("%c\n", a);
+// 	// printf("%i\n", j);
 
-// 	char *b = "nick nick nich";
-// 	i = printf("%s\n", b);
-// 	printf("%i\n", i);
-// 	j = ft_printf("%s\n", b);
-// 	printf("%i\n", j);
+// 	// char *b = "nick nick nich";
+// 	// i = printf("%s\n", b);
+// 	// printf("%i\n", i);
+// 	// j = ft_printf("%s\n", b);
+// 	// printf("%i\n", j);
 
-// 	i = printf("%p\n", b);
-// 	printf("%i\n", i);
-// 	j = ft_printf("%p\n", b);
-// 	printf("%i\n", j);
+// 	// i = printf("%p\n", b);
+// 	// printf("%i\n", i);
+// 	// j = ft_printf("%p\n", b);
+// 	// printf("%i\n", j);
+// 	printf("%p", LONG_MAX);
+// 	printf("\n");
+// 	ft_printf("%p", LONG_MAX);
 // }

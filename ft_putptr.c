@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:21:50 by fsitter           #+#    #+#             */
-/*   Updated: 2025/10/22 15:39:02 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/10/24 12:45:29 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ int	ft_putptr(unsigned long nb)
 
 	base = "0123456789abcdef";
 	len = 0;
-	len += ft_putstr("0x");
 	if (nb > 15)
-		len += ft_puthex((nb / 16), 'x');
+		len += ft_putptr((nb / 16));
 	is_valid = ft_putchar(base[nb % 16]);
 	if (is_valid == -1)
 		return (is_valid);
