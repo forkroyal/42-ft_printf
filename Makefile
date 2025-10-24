@@ -6,7 +6,7 @@
 #    By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 08:48:43 by fsitter           #+#    #+#              #
-#    Updated: 2025/10/23 11:09:58 by fsitter          ###   ########.fr        #
+#    Updated: 2025/10/24 10:36:48 by fsitter          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,6 @@ all: ${NAME}
 
 make: make all
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all make
 
 
