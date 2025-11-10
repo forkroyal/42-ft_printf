@@ -6,11 +6,12 @@
 #    By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 08:48:43 by fsitter           #+#    #+#              #
-#    Updated: 2025/10/24 12:47:11 by fsitter          ###   ########.fr        #
+#    Updated: 2025/11/10 16:10:01 by fsitter          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+#NAME = libftprintf.a
+NAME = libft.a
 
 SOURCE = 	ft_printf.c \
 			ft_putchar.c \
